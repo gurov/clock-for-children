@@ -1,0 +1,98 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Days of week for children">
+    <meta name="author" content="Pavel Gurov">
+
+
+    <title>Days of week for children</title>
+
+
+
+
+    <style>
+        body {
+            background-color: #241807;
+        }
+        .container {
+            position: relative;
+            width: 800px;
+            height: 800px;
+            margin: 50px auto;
+            background-image: url("./clock.png");
+        }
+        .arrow-position-0,
+        .arrow-position-1,
+        .arrow-position-2,
+        .arrow-position-3,
+        .arrow-position-4,
+        .arrow-position-5,
+        .arrow-position-6 {
+            position: absolute;
+        }
+
+        .arrow-position-0 {
+            top: 280px;
+            left: 228px;
+            transform: rotate(90deg);
+        }
+
+        .arrow-position-1 {
+            top: 300px;
+            left: 295px;
+            transform: rotate(140deg);
+        }
+        .arrow-position-2 {
+            top: 370px;
+            left: 300px;
+            transform: rotate(190deg);
+        }
+        .arrow-position-3 {
+            top: 400px;
+            left: 240px;
+            transform: rotate(250deg);
+        }
+        .arrow-position-4 {
+            top: 400px;
+            left: 200px;
+            transform: rotate(300deg);
+        }
+        .arrow-position-5 {
+            top: 370px;
+            left: 150px;
+            transform: rotate(350deg);
+        }
+        .arrow-position-6 {
+            top: 300px;
+            left: 150px;
+            transform: rotate(40deg);
+        }
+
+    </style>
+
+
+</head>
+<body>
+<div class="container">
+    <img src="./arrow.png" alt="arrow" id="arrow" class="arrow-position-0">
+
+</div>
+
+
+
+</body>
+
+<script>
+    function setPosition() {
+        const weekDay = new Date().getDay();
+        document.getElementById("arrow").className = `arrow-position-${weekDay}`;
+    }
+
+    setPosition();
+    setInterval(setPosition(), 60 * 1000);
+
+</script>
+
+</html>
